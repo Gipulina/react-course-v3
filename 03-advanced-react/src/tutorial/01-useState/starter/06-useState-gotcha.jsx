@@ -2,16 +2,15 @@ import { useState } from "react";
 
 const UseStateGotcha = () => {
   const[value, setValue] = useState(0);
-
+// This waits 5 second and increase the number according to the amount of clicks during that time frame
   const handleClick = () => { 
-    // setValue(value + 1);
-    //This way, the current variable is taking the same value of the value variable, instead of showing one more number.
+    setTimeout (()=> {
     setValue((currentState)=>{
-      const newState = currentState + 1
-      console.log(currentState);
-      return newState;
-    } );
-  };
+        return currentState + 1;
+    });
+},3000);
+    
+};
   return (
     <>
       <h2>{value}</h2>
